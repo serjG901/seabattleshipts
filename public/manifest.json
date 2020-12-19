@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "SeaBattleship",
+  "name": "SeaBttleship - little game for two players",
   "icons": [
     {
       "src": "favicon.ico",
