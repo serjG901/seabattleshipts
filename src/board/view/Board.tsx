@@ -10,11 +10,26 @@ interface BoardInterface {
 
 export function Board({ play }: BoardInterface) {
   return (
-    <div className="p-4 flex flex-col items-center justify-center text-center">
-      <GameName />
-      {play ? <GameConnect /> : <GameSettingsConnect />}
-      <br />
-      <Rulles />
+    <div
+      className="
+        p-2 
+        h-screen
+        flex 
+        flex-col 
+        items-center 
+        justify-center
+        text-center text-white"
+    >
+      {play ? (
+        <GameConnect />
+      ) : (
+        <>
+          <GameName />
+          <GameSettingsConnect />
+          <br />
+          <Rulles />
+        </>
+      )}
     </div>
   );
 }

@@ -4,32 +4,36 @@ interface CellInterface {
   id: number;
   disabled: boolean;
   onTarget: (id: number) => void;
-  xChoice: boolean;
+  destroyed: boolean;
 }
 
-export function Cell({ id, disabled, onTarget, xChoice }: CellInterface) {
+export function Cell({ id, disabled, onTarget, destroyed }: CellInterface) {
   const enabledStyle = `
-    w-8 
-    text-black 
+    h-16
+    w-full 
+    text-white 
     cursor-pointer 
-    rounded-xl
-    bg-blue-100 
-    hover:bg-red-100 
+    rounded-full
+    bg-blue-500 
+    hover:bg-red-500 
     `;
   const disabledStyle = `
-    w-8 
+    h-16
+    w-full
     text-gray-200 
     cursor-not-allowed 
     `;
 
   return (
-    <button
-      className={disabled ? disabledStyle : enabledStyle}
-      type="button"
-      onClick={() => onTarget(id)}
-      disabled={disabled}
-    >
-      {xChoice ? "x" : id}
-    </button>
+    <div>
+      <button
+        className={disabled ? disabledStyle : enabledStyle}
+        type="button"
+        onClick={() => onTarget(id)}
+        disabled={disabled}
+      >
+        {destroyed ? "x" : "~"}
+      </button>
+    </div>
   );
 }

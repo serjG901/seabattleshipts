@@ -15,7 +15,6 @@ export function Select({
   setValue,
   viewModificator,
 }: SelectInterface) {
-  
   function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
     setValue(Number(event.target.value));
   }
@@ -24,7 +23,11 @@ export function Select({
     <div>
       <label>{labelText}</label>
       <br />
-      <select defaultValue={defaultValue} onChange={handleChange}>
+      <select
+        className="bg-blue-900 cursor-pointer"
+        defaultValue={defaultValue}
+        onChange={handleChange}
+      >
         {selectArray.map((item) => {
           return (
             <option key={item} value={item}>

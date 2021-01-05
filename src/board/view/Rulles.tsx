@@ -3,8 +3,7 @@ import React from "react";
 export function Rulles() {
   const [isOpen, setIsOpen] = React.useState(false);
   const style = `
-    text-blue-500 
-    hover:text-blue-800 
+text-white
     cursor-pointer
     `;
   return (

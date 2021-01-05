@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
 import { BoardConnect } from "./board/connect/BoardConnect";
-import './App.css';
+import Background from "./common/Background";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-     <BoardConnect />
+      <BoardConnect />
+      <Background />
     </div>
   );
 }
