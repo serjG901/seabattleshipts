@@ -8,6 +8,6 @@ export const playerColor: StringStringInterface = {
 };
 
 export const playerShip: StringStringInterface = {
-  player1: "rounded-l-none rounded-r-full",
-  player2: "rounded-r-none rounded-l-full",
+  player1: "right-0",
+  player2: "left-0",
 };

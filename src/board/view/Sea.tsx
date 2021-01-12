@@ -25,6 +25,15 @@ export function Sea({
   oponent,
   onTarget,
 }: SeaInterface) {
+  const shipStyle = `
+    absolute 
+    w-1/5 
+    h-1/5 
+    bg-blue-900 
+    border 
+    border-dashed 
+    border-black
+    `;
   return (
     <div className={`w-1/2 p-2 text-${playerColor[player.name]}`}>
       <p>
@@ -32,19 +41,32 @@ export function Sea({
         <span className="font-bold">{player.ships.length}</span>{" "}
         {player.ships.length === 1 ? "ship" : "ships"}
       </p>
-      <div
-        className={`flex flex-wrap bg-blue-900 border-2 border-dashed border-black`}
-      >
+      <div className={`flex flex-wrap bg-blue-900`}>
         {getBoardArray(seaSize).map((id) => {
           return (
             <div
               key={id}
-              className={`w-1/${seaSize} ${playerShip[player.name]} ${
-                player.destroyedShips.includes(id)
-                  ? `bg-${playerColor[player.name]}`
-                  : null
-              }`}
+              className={`
+                relative 
+                w-1/${seaSize} 
+                ${
+                  player.destroyedShips.includes(id)
+                    ? `bg-${playerColor[player.name]}`
+                    : null
+                }`}
             >
+              {player.destroyedShips.includes(id) ? (
+                <>
+                  <div
+                    className={`top-0 ${shipStyle} ${playerShip[player.name]}`}
+                  ></div>
+                  <div
+                    className={`bottom-0 ${shipStyle} ${
+                      playerShip[player.name]
+                    }`}
+                  ></div>
+                </>
+              ) : null}
               <Cell
                 id={id}
                 disabled={
