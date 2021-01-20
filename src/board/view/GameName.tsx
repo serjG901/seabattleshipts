@@ -1,10 +1,10 @@
-import React from "react";
+import { playerColor } from "../playerColorAndShip";
 
 export function GameName() {
   return (
     <span className="text-6xl p-4 italic">
-      <span className="text-green-500">SEA</span>{" "}
-      <span className="text-yellow-500">BATTLESHIP</span>
+      <span className={`text-${playerColor.player1}`}>SEA</span>{" "}
+      <span className={`text-${playerColor.player2}`}>BATTLESHIP</span>
     </span>
   );
 }

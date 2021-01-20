@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch } from "react-redux";
 import { play } from "../boardSlice";
 import { Button } from "../../common/Button";

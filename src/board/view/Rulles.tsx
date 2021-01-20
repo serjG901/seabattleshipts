@@ -1,9 +1,9 @@
-import React from "react";
+import { useState } from "react";
 
 export function Rulles() {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const style = `
-text-white
+    text-gray-400
     cursor-pointer
     `;
   return (

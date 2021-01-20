@@ -1,5 +1,3 @@
-import React from "react";
-
 interface TextWithExplaneInterface {
   explane: string;
   union: string;
@@ -14,7 +12,7 @@ export function TextWithExplane({
   color = "red-500",
 }: TextWithExplaneInterface) {
   return (
-    <div className="italic font-bold">
+    <div className="italic font-bold text-gray-400">
       {explane} {union} <span className={`text-${color}`}>{text}</span>
     </div>
   );

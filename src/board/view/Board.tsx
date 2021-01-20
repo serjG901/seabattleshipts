@@ -1,4 +1,3 @@
-import React from "react";
 import { GameConnect } from "../connect/GameConnect";
 import { GameName } from "./GameName";
 import { GameSettingsConnect } from "../connect/GameSettingsConnect";

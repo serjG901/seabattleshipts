@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectBoard } from "../boardSlice";
 import { seaSize, numberOfShips } from "../boardSlice";

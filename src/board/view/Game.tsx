@@ -1,4 +1,3 @@
-import React from "react";
 import { TextWithExplane } from "../../common/TextWithExplane";
 import { SeaConnect } from "../connect/SeaConnect";
 import { PlayAgainConnect } from "../connect/PlayAgainConnect";

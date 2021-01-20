@@ -1,5 +1,3 @@
-import React from "react";
-
 interface CellInterface {
   id: number;
   disabled: boolean;
@@ -12,21 +10,20 @@ export function Cell({ id, disabled, onTarget, destroyed }: CellInterface) {
     h-16
     w-full
     border 
-    border-dashed 
-    border-black
+    border-solid 
+    border-blue-900
     text-4xl
+    text-blue-900
     `;
 
   const enabledStyle = `
     ${style}
-    text-white 
     cursor-pointer 
     bg-blue-500 
     hover:bg-red-500 
     `;
   const disabledStyle = `
     ${style}
-    text-blue-900 
     cursor-not-allowed 
     `;
 

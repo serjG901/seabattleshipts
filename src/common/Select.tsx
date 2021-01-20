@@ -1,5 +1,3 @@
-import React from "react";
-
 interface SelectInterface {
   labelText: string;
   defaultValue: number;
@@ -15,27 +13,30 @@ export function Select({
   setValue,
   viewModificator,
 }: SelectInterface) {
-  function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
-    setValue(Number(event.target.value));
+  function handleClick(value: number) {
+    setValue(Number(value));
   }
 
   return (
     <div>
-      <label>{labelText}</label>
-      <br />
-      <select
-        className="bg-blue-900 cursor-pointer"
-        defaultValue={defaultValue}
-        onChange={handleChange}
-      >
-        {selectArray.map((item) => {
+      <p className="text-gray-400">{labelText}</p>
+      <div className="flex justify-evenly w-72">
+        {selectArray.map((item: number) => {
           return (
-            <option key={item} value={item}>
+            <div
+              key={item}
+              className={`flex-1 cursor-pointer py-2 ${
+                item === defaultValue
+                  ? "border border-solid border-gray-400 transform scale-125"
+                  : ""
+              }`}
+              onClick={() => handleClick(item)}
+            >
               {viewModificator(item)}
-            </option>
+            </div>
           );
         })}
-      </select>
+      </div>
     </div>
   );
 }

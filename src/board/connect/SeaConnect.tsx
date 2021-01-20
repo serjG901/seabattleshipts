@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { movePlayer1, movePlayer2, selectBoard } from "../boardSlice";
 import { Sea } from "../view/Sea";

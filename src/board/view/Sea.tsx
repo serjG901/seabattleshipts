@@ -1,4 +1,3 @@
-import React from "react";
 import { getBoardArray } from "../getArrayFunctions";
 import { Cell } from "./Cell";
 import { playerColor, playerShip } from "../playerColorAndShip";
@@ -30,9 +29,6 @@ export function Sea({
     w-1/5 
     h-1/5 
     bg-blue-900 
-    border 
-    border-dashed 
-    border-black
     `;
   return (
     <div className={`w-1/2 p-2 text-${playerColor[player.name]}`}>
