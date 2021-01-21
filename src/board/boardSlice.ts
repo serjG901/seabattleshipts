@@ -86,13 +86,30 @@ export const boardSlice = createSlice({
     },
     movePlayer1: (state, action) => {
       state.player1.move = [...state.player1.move, action.payload];
+      window.navigator.vibrate([200]);
       if (state.player2.ships.includes(action.payload)) {
         state.player2.ships = state.player2.ships.filter(
           (ship) => ship !== action.payload
         );
         state.player2.destroyedShips.push(action.payload);
+        window.navigator.vibrate([200, 50, 500]);
       }
-      if (state.player2.ships.length === 0) state.winner = "player1";
+      if (state.player2.ships.length === 0) {
+        state.winner = "player1";
+        window.navigator.vibrate([
+          200,
+          50,
+          200,
+          50,
+          500,
+          50,
+          500,
+          50,
+          500,
+          50,
+          200,
+        ]);
+      }
       state.currentPlayer = "player2";
     },
     shipsPlayer1: (state, action) => {
@@ -100,13 +117,30 @@ export const boardSlice = createSlice({
     },
     movePlayer2: (state, action) => {
       state.player2.move = [...state.player2.move, action.payload];
+      window.navigator.vibrate([200]);
       if (state.player1.ships.includes(action.payload)) {
         state.player1.ships = state.player1.ships.filter(
           (ship) => ship !== action.payload
         );
         state.player1.destroyedShips.push(action.payload);
+        window.navigator.vibrate([200, 50, 500]);
       }
-      if (state.player1.ships.length === 0) state.winner = "player2";
+      if (state.player1.ships.length === 0) {
+        state.winner = "player2";
+        window.navigator.vibrate([
+          200,
+          50,
+          200,
+          50,
+          500,
+          50,
+          500,
+          50,
+          500,
+          50,
+          200,
+        ]);
+      }
       state.currentPlayer = "player1";
     },
     shipsPlayer2: (state, action) => {

@@ -7,7 +7,7 @@ export default function Background() {
         fixed
         h-screen 
         w-screen
-        bg-blue-900
+        bg-blue-100
         `}
     ></div>
   );

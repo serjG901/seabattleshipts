@@ -12,8 +12,8 @@ export function Game({ winner, currentPlayer }: GameInterface) {
   return winner ? (
     <>
       <TextWithExplane
-        explane="Winner the game"
-        union="-"
+        explane="WIN"
+        union="!"
         text={winner}
         color={currentPlayer !== null ? playerColor[winner] : undefined}
       />
@@ -23,8 +23,8 @@ export function Game({ winner, currentPlayer }: GameInterface) {
   ) : (
     <div className="flex flex-col">
       <TextWithExplane
-        explane="Next move"
-        union="-"
+        explane="ATACK"
+        union="!"
         text={currentPlayer}
         color={currentPlayer !== null ? playerColor[currentPlayer] : undefined}
       />

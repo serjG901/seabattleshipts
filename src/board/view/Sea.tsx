@@ -28,7 +28,7 @@ export function Sea({
     absolute 
     w-1/5 
     h-1/5 
-    bg-blue-900 
+    bg-blue-100 
     `;
   return (
     <div className={`w-1/2 p-2 text-${playerColor[player.name]}`}>
@@ -37,7 +37,7 @@ export function Sea({
         <span className="font-bold">{player.ships.length}</span>{" "}
         {player.ships.length === 1 ? "ship" : "ships"}
       </p>
-      <div className={`flex flex-wrap bg-blue-900`}>
+      <div className={`flex flex-wrap`}>
         {getBoardArray(seaSize).map((id) => {
           return (
             <div

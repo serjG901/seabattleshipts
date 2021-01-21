@@ -16,7 +16,7 @@ export function Rulles() {
       >
         Rulles the game
       </span>
-      <div className="text-left max-w-md" hidden={!isOpen}>
+      <div className="text-left max-w-md text-gray-400" hidden={!isOpen}>
         <p>You have several solo ships.</p>
         <p>They are distributed randomly across the playing field.</p>
         <p>The first move is made by the player who got the random choice.</p>

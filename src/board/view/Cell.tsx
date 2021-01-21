@@ -11,19 +11,19 @@ export function Cell({ id, disabled, onTarget, destroyed }: CellInterface) {
     w-full
     border 
     border-solid 
-    border-blue-900
+    border-blue-100
     text-4xl
-    text-blue-900
     `;
 
   const enabledStyle = `
-    ${style}
+    ${style} text-blue-900
     cursor-pointer 
     bg-blue-500 
     hover:bg-red-500 
     `;
   const disabledStyle = `
     ${style}
+    text-blue-500
     cursor-not-allowed 
     `;
 
@@ -35,7 +35,7 @@ export function Cell({ id, disabled, onTarget, destroyed }: CellInterface) {
         onClick={() => onTarget(id)}
         disabled={disabled}
       >
-        {destroyed ? "x" : "~"}
+        {destroyed ?  <span className="text-blue-100">X</span> : <span style={{fontFamily:"sans-serif"}}>~</span>}
       </button>
     </div>
   );

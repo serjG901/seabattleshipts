@@ -19,7 +19,6 @@ export function Select({
 
   return (
     <div>
-      <p className="text-gray-400">{labelText}</p>
       <div className="flex justify-evenly w-72">
         {selectArray.map((item: number) => {
           return (
@@ -27,8 +26,8 @@ export function Select({
               key={item}
               className={`flex-1 cursor-pointer py-2 ${
                 item === defaultValue
-                  ? "border border-solid border-gray-400 transform scale-125"
-                  : ""
+                  ? "text-blue-800 bg-blue-500 hover:bg-blue-500 shadow-md transform scale-125"
+                  : "text-blue-500"
               }`}
               onClick={() => handleClick(item)}
             >
@@ -37,6 +36,7 @@ export function Select({
           );
         })}
       </div>
+      <p className="text-gray-400 border-t-2 border-solid border-blue-500">{labelText}</p>
     </div>
   );
 }
