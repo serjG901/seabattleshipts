@@ -23,7 +23,7 @@ export function Game({ winner, currentPlayer }: GameInterface) {
   ) : (
     <div className="flex flex-col">
       <TextWithExplane
-        explane="ATACK"
+        explane="ATTACKS"
         union="!"
         text={currentPlayer}
         color={currentPlayer !== null ? playerColor[currentPlayer] : undefined}

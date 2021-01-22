@@ -7,11 +7,11 @@ interface CellInterface {
 
 export function Cell({ id, disabled, onTarget, destroyed }: CellInterface) {
   const style = `
-    h-16
+    h-12
     w-full
     border 
     border-solid 
-    border-blue-100
+    border-blue-900
     text-4xl
     `;
 
@@ -24,7 +24,8 @@ export function Cell({ id, disabled, onTarget, destroyed }: CellInterface) {
   const disabledStyle = `
     ${style}
     text-blue-500
-    cursor-not-allowed 
+    cursor-not-allowed
+    ${destroyed ? "" : "bg-blue-900"}
     `;
 
   return (
@@ -35,7 +36,13 @@ export function Cell({ id, disabled, onTarget, destroyed }: CellInterface) {
         onClick={() => onTarget(id)}
         disabled={disabled}
       >
-        {destroyed ?  <span className="text-blue-100">X</span> : <span style={{fontFamily:"sans-serif"}}>~</span>}
+        {destroyed ? (
+          <span className="text-blue-900">X</span>
+        ) : !disabled ? (
+          <span>?</span>
+        ) : (
+          <span style={{ fontFamily: "sans-serif" }}>~</span>
+        )}
       </button>
     </div>
   );

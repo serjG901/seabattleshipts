@@ -14,17 +14,13 @@ export function Rulles() {
           setIsOpen(!isOpen);
         }}
       >
-        Rulles the game
+        Game rulle
       </span>
-      <div className="text-left max-w-md text-gray-400" hidden={!isOpen}>
-        <p>You have several solo ships.</p>
+      <div className="text-left max-w-mx text-gray-400" hidden={!isOpen}>
+        <p>You're have several solo ships.</p>
         <p>They are distributed randomly across the playing field.</p>
-        <p>The first move is made by the player who got the random choice.</p>
-        <p>Each player makes one move, regardless of hitting the target.</p>
-        <p>
-          The winner is the player who knocks out all the ships from the enemy
-          field.
-        </p>
+        <p>Each player makes one move.</p>
+        <p>Knock out all the ships from the enemy field!</p>
       </div>
     </div>
   );

@@ -28,7 +28,7 @@ interface StateInterface {
 
 function initialBoard(): BoardInterface {
   return {
-    selectSeaSize: [3, 4, 5],
+    selectSeaSize: [2, 3, 4, 5, 6],
     seaSize: 3,
     numberOfShips: 3,
     play: false,
@@ -69,6 +69,7 @@ export const boardSlice = createSlice({
         ships: [],
         destroyedShips: [],
       };
+      window.navigator.vibrate([100]);
     },
     seaSize: (state, action) => {
       state.seaSize = action.payload;
@@ -80,34 +81,35 @@ export const boardSlice = createSlice({
     play: (state, action) => {
       state.play = true;
       state.currentPlayer = action.payload;
+      window.navigator.vibrate([100]);
     },
     winner: (state, action) => {
       state.winner = action.payload;
     },
     movePlayer1: (state, action) => {
       state.player1.move = [...state.player1.move, action.payload];
-      window.navigator.vibrate([200]);
+      window.navigator.vibrate([100]);
       if (state.player2.ships.includes(action.payload)) {
         state.player2.ships = state.player2.ships.filter(
           (ship) => ship !== action.payload
         );
         state.player2.destroyedShips.push(action.payload);
-        window.navigator.vibrate([200, 50, 500]);
+        window.navigator.vibrate([50, 50, 200]);
       }
       if (state.player2.ships.length === 0) {
         state.winner = "player1";
         window.navigator.vibrate([
+          100,
+          50,
+          100,
+          50,
+          200,
+          50,
           200,
           50,
           200,
           50,
-          500,
-          50,
-          500,
-          50,
-          500,
-          50,
-          200,
+          100,
         ]);
       }
       state.currentPlayer = "player2";
@@ -117,28 +119,28 @@ export const boardSlice = createSlice({
     },
     movePlayer2: (state, action) => {
       state.player2.move = [...state.player2.move, action.payload];
-      window.navigator.vibrate([200]);
+      window.navigator.vibrate([100]);
       if (state.player1.ships.includes(action.payload)) {
         state.player1.ships = state.player1.ships.filter(
           (ship) => ship !== action.payload
         );
         state.player1.destroyedShips.push(action.payload);
-        window.navigator.vibrate([200, 50, 500]);
+        window.navigator.vibrate([50, 50, 200]);
       }
       if (state.player1.ships.length === 0) {
         state.winner = "player2";
         window.navigator.vibrate([
+          100,
+          50,
+          100,
+          50,
           200,
           50,
           200,
           50,
           500,
           50,
-          500,
-          50,
-          500,
-          50,
-          200,
+          100,
         ]);
       }
       state.currentPlayer = "player1";

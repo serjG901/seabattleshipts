@@ -1,6 +1,7 @@
 import { getBoardArray } from "../getArrayFunctions";
 import { Cell } from "./Cell";
-import { playerColor, playerShip } from "../playerColorAndShip";
+import { playerColor, playerShipDirection } from "../playerColorAndShip";
+import { ShipView } from "./ShipView";
 
 interface PlayerInterface {
   name: string;
@@ -24,18 +25,10 @@ export function Sea({
   oponent,
   onTarget,
 }: SeaInterface) {
-  const shipStyle = `
-    absolute 
-    w-1/5 
-    h-1/5 
-    bg-blue-100 
-    `;
   return (
-    <div className={`w-1/2 p-2 text-${playerColor[player.name]}`}>
+    <div className={`w-1/2 px-2 pb-2 bg-blue-900 text-${playerColor[player.name]}`}>
       <p>
-        {player.name} have a{" "}
-        <span className="font-bold">{player.ships.length}</span>{" "}
-        {player.ships.length === 1 ? "ship" : "ships"}
+        {player.name} / {player.ships.length} left
       </p>
       <div className={`flex flex-wrap`}>
         {getBoardArray(seaSize).map((id) => {
@@ -52,16 +45,7 @@ export function Sea({
                 }`}
             >
               {player.destroyedShips.includes(id) ? (
-                <>
-                  <div
-                    className={`top-0 ${shipStyle} ${playerShip[player.name]}`}
-                  ></div>
-                  <div
-                    className={`bottom-0 ${shipStyle} ${
-                      playerShip[player.name]
-                    }`}
-                  ></div>
-                </>
+                <ShipView direction={playerShipDirection[player.name]} />
               ) : null}
               <Cell
                 id={id}

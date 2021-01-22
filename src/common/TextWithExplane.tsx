@@ -13,7 +13,11 @@ export function TextWithExplane({
 }: TextWithExplaneInterface) {
   return (
     <div className="italic font-bold text-gray-400">
-      <span className={`text-${color}`}>{text}</span> {explane}{union} 
+      <p className={`text-${color}`}>{text}</p>{" "}
+      <p>
+        {explane}
+        {union}{" "}
+      </p>
     </div>
   );
 }

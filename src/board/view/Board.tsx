@@ -11,6 +11,7 @@ export function Board({ play }: BoardInterface) {
   return (
     <div
       className="
+        text-2xl
         p-2 
         h-screen
         flex 
@@ -24,8 +25,8 @@ export function Board({ play }: BoardInterface) {
       ) : (
         <>
           <GameName />
+          <div className="text-gray-400 -mt-4">for two players</div>
           <GameSettingsConnect />
-          <br />
           <Rulles />
         </>
       )}

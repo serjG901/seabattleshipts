@@ -21,13 +21,12 @@ export function GameSettings({
   return (
     <div className="m-4">
       <Select
-        labelText="Sea size"
+        labelText="Field size"
         defaultValue={seaSize}
         selectArray={seaSizeArray}
         setValue={setSeaSize}
-        viewModificator={(size: number) => `${size} x ${size}`}
+        viewModificator={(size: number) => `${size}x${size}`}
       />
-      <br />
       <Select
         labelText="Number of ships"
         defaultValue={numberOfShips}
@@ -35,7 +34,6 @@ export function GameSettings({
         setValue={setNumberOfShips}
         viewModificator={(number: number) => `${number}`}
       />
-      <br />
       <PlayConnect />
     </div>
   );

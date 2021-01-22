@@ -18,13 +18,13 @@ export function Select({
   }
 
   return (
-    <div>
-      <div className="flex justify-evenly w-72">
+    <div className="pb-2">
+      <div className="flex justify-evenly w-80">
         {selectArray.map((item: number) => {
           return (
             <div
               key={item}
-              className={`flex-1 cursor-pointer py-2 ${
+              className={`flex-1 cursor-pointer ${
                 item === defaultValue
                   ? "text-blue-800 bg-blue-500 hover:bg-blue-500 shadow-md transform scale-125"
                   : "text-blue-500"
