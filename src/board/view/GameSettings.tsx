@@ -1,7 +1,7 @@
 import { Select } from "../../common/Select";
 import { PlayConnect } from "../connect/PlayConnect";
 
-interface GameSettimngsInterface {
+interface GameSettingsInterface {
   seaSize: number;
   seaSizeArray: Array<number>;
   setSeaSize: (value: number) => void;
@@ -17,7 +17,7 @@ export function GameSettings({
   numberOfShips,
   numberOfShipsArray,
   setNumberOfShips,
-}: GameSettimngsInterface) {
+}: GameSettingsInterface) {
   return (
     <div className="m-4">
       <Select

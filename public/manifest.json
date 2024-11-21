@@ -1,6 +1,6 @@
 {
   "short_name": "SeaBattle",
-  "name": "SeaBattle - little game for two players",
+  "name": "SeaBattle: A game for two players",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +18,78 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#1e3a8a"
+  "start_url": "https://serjg901.github.io/seabattle-ts-pwa/",
+  "display": "fullscreen",
+  "theme_color": "#0a1533",
+  "background_color": "#0a1533",
+  "lang": "en",
+  "description": "SeaBattle is a game for two players. Knock out all the ships from the enemy field!",
+  "orientation": "landscape-primary",
+  "scope": "https://serjg901.github.io/seabattle-ts-pwa/",
+  "display_override": [
+    "fullscreen",
+    "standalone",
+    "minimal-ui",
+    "browser",
+    "window-controls-overlay"
+  ],
+  "categories": [
+    "games"
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot1w.jpg",
+      "sizes": "1398x645",
+      "type": "image/jpg",
+      "platform": "wide"
+    },
+    {
+      "src": "screenshot2w.jpg",
+      "sizes": "1398x645",
+      "type": "image/jpg",
+      "platform": "wide"
+    },
+    {
+      "src": "screenshot3w.jpg",
+      "sizes": "1398x645",
+      "type": "image/jpg",
+      "platform": "wide"
+    },
+    {
+      "src": "screenshot4w.jpg",
+      "sizes": "1398x645",
+      "type": "image/jpg",
+      "platform": "wide"
+    },
+    {
+      "src": "screenshot1n.jpg",
+      "sizes": "645x1398",
+      "type": "image/jpg",
+      "platform": "narrow"
+    },
+    {
+      "src": "screenshot2n.jpg",
+      "sizes": "645x1398",
+      "type": "image/jpg",
+      "platform": "narrow"
+    },
+    {
+      "src": "screenshot3n.jpg",
+      "sizes": "645x1398",
+      "type": "image/jpg",
+      "platform": "narrow"
+    },
+    {
+      "src": "screenshot4n.jpg",
+      "sizes": "645x1398",
+      "type": "image/jpg",
+      "platform": "narrow"
+    }
+  ],
+  "id": "1",
+  "dir": "auto",
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "auto"
+  }
 }
